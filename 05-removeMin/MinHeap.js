@@ -21,6 +21,26 @@ class MinHeap {
         current = getParent(current);
       }
     }
+
+    popMin() {
+      if (this.size === 0) {
+        return null;
+      }
+    
+      // Swap the last element with the minimum element at index 1
+      console.log(`Swapping ${this.heap[1]} with ${this.heap[this.size]}`);
+      this.swap(1, this.size);
+    
+      // Remove the last element and decrement the size
+      const min = this.heap.pop();
+      this.size--;
+    
+      // Display the message and updated heap
+      console.log(`Removed minimum element: ${min}`);
+      console.log('Updated heap:', this.heap);
+    
+      return min;
+    }
   
     swap(a, b) {
       [this.heap[a], this.heap[b]] = [this.heap[b], this.heap[a]];
