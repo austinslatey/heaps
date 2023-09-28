@@ -13,7 +13,12 @@ console.log(minHeap.heap);
 // replace null with the correct way to access the values of the parent, left child and right child
 const current = 3;
 const currentValue = minHeap.heap[current];
+const parentIndex = getParent(current);
+const leftChildIndex = getLeft(current);
+const rightChildIndex = getRight(current);
+
+
 console.log(`Current value of ${current} is ${currentValue}`);
-console.log(`Parent value of ${currentValue} is ${null}`);
-console.log(`Left child value of ${currentValue} is ${null}`);
-console.log(`Right child value of ${currentValue} is ${null}`);
+console.log(`Parent value of ${currentValue} is ${minHeap.heap[parentIndex]}`);
+console.log(`Left child value of ${currentValue} is ${minHeap.heap[leftChildIndex]}`);
+console.log(`Right child value of ${currentValue} is ${minHeap.heap[rightChildIndex]}`);
