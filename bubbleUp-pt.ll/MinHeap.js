@@ -13,8 +13,13 @@ class MinHeap {
     }
 
     bubbleUp() {
-
-    }
+        let current = this.size;
+      
+        while (current > 1 && this.heap[current] < this.heap[getParent(current)]) {
+          this.swap(current, getParent(current));
+          current = getParent(current);
+        }
+      }
 
     swap(a, b) {
         [this.heap[a], this.heap[b]] = [this.heap[b], this.heap[a]];
